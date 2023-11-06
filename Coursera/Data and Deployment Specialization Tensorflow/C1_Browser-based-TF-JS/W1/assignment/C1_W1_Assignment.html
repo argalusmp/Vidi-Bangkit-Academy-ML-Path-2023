@@ -4,15 +4,18 @@
     <script lang="js">
         
         async function run(){
-            const trainingUrl = '/data/wdbc-train.csv';
+            const trainingUrl = './data/wdbc-train.csv';
             
             // Take a look at the 'wdbc-train.csv' file and specify the column
             // that should be treated as the label in the space below.
             // HINT: Remember that you are trying to build a classifier that 
             // can predict from the data whether the diagnosis is malignant or benign.
             const trainingData = tf.data.csv(trainingUrl, {
-                
-                // YOUR CODE HERE
+                coloumConfigs:{
+                    diagnosis: {
+                        isLabel: true
+                    }
+                }
                 
             });
             
