@@ -105,7 +105,6 @@ async function init(){
 	await webcam.setup();
 	mobilenet = await loadMobilenet();
 	tf.tidy(() => mobilenet.predict(webcam.capture()));
-		
 }
 
 
